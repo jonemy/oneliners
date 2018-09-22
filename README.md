@@ -18,6 +18,13 @@ wmic process call create "cmd.exe /c calc.exe"
 
 (Bash) for i in (cat filename); do echo $i; done
 
+With GDPR there is different information available between variosu registrars.  This whois query will query the specific registrar and return results direct from the registrar:
+whois -h $(whois apple.com | grep WHOIS | cut -d: -f 2) apple.com
+
+
+
+
+
 
 
 
