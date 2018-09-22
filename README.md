@@ -20,6 +20,8 @@ wmic process call create "cmd.exe /c calc.exe"
 
 With GDPR there is different information available between variosu registrars.  This whois query will query the specific registrar and return results direct from the registrar:
 whois -h $(whois apple.com | grep 'WHOIS Server' | cut -d: -f 2) apple.com
+or look up a few like this:
+for i in sans.org theonion.com; do whois -h $(whois $i | grep 'WHOIS Server' | cut -d: -f 2) $i; done
 
 
 
