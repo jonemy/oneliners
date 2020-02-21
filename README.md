@@ -1,6 +1,8 @@
 # oneliners
 One line DOS commands useful during pentests
 
+Get-ChildItem -Recurse | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays(-180)}   #returns files modified in past 180 days
+
 for /f %a in (hosts.txt) do dir /b /s \\\\%a\\C$\\Users\\file*
 
 for /f %a in (hosts.txt) do @if exist \\\\%a\\C$\\Users\\ echo users found on %a
