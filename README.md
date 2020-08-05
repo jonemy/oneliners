@@ -25,6 +25,12 @@ whois -h $(whois apple.com | grep 'WHOIS Server' | cut -d: -f 2) apple.com
 or look up a few like this:
 for i in sans.org theonion.com; do whois -h $(whois $i | grep 'WHOIS Server' | cut -d: -f 2) $i; done
 
+This is more for the powershell stuff at the end of the line 
+tshark -r e:\capture\random.pcap -Y http.user_agent -T fields -e http.user_agent | powershell -nop "$input | group-object | Select-Object -Property Count, Name | Sort-Object -Property Count -Descending "
+tshark -r e:\capture\random.pcap -Y http.user_agent -T fields -e http.user_agent | powershell -nop "$input | group | select Count, Name | sort Count -d"
+tshark -r e:\capture\m2.pcap -Y http.user_agent -T fields -e http.user_agent | powershell -nop "$input | group | select Count, Name | sort Count -d"
+
+
 
 
 
